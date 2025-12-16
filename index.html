@@ -1,712 +1,690 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jaster Tongol - Automation Portfolio</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-
-        header {
-            text-align: center;
-            padding: 60px 20px;
-            color: white;
-        }
-
-        header h1 {
-            font-size: 3rem;
-            margin-bottom: 20px;
-            animation: fadeInDown 1s ease;
-        }
-
-        header p {
-            font-size: 1.3rem;
-            opacity: 0.95;
-            animation: fadeInUp 1s ease;
-        }
-
-        .stats {
-            display: flex;
-            justify-content: center;
-            gap: 40px;
-            margin-top: 40px;
-            flex-wrap: wrap;
-        }
-
-        .stat-box {
-            background: rgba(255, 255, 255, 0.15);
-            backdrop-filter: blur(10px);
-            padding: 20px 40px;
-            border-radius: 15px;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            text-align: center;
-        }
-
-        .stat-number {
-            font-size: 2.5rem;
-            font-weight: bold;
-            color: #fff;
-        }
-
-        .stat-label {
-            font-size: 0.9rem;
-            color: rgba(255, 255, 255, 0.9);
-            margin-top: 5px;
-        }
-
-        .main-content {
-            background: white;
-            border-radius: 20px;
-            padding: 60px 40px;
-            margin-top: -40px;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-        }
-
-        .section {
-            margin-bottom: 60px;
-        }
-
-        .section h2 {
-            font-size: 2rem;
-            margin-bottom: 15px;
-            color: #667eea;
-            position: relative;
-            padding-bottom: 10px;
-        }
-
-        .section h2::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 60px;
-            height: 4px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            border-radius: 2px;
-        }
-
-        .demo-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
-        }
-
-        .demo-card {
-            background: #f8f9fa;
-            padding: 30px;
-            border-radius: 15px;
-            border: 2px solid #e9ecef;
-            transition: all 0.3s ease;
-            cursor: pointer;
-        }
-
-        .demo-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.2);
-            border-color: #667eea;
-        }
-
-        .demo-card h3 {
-            color: #667eea;
-            margin-bottom: 15px;
-            font-size: 1.4rem;
-        }
-
-        .demo-card p {
-            color: #666;
-            margin-bottom: 20px;
-        }
-
-        .demo-card .btn {
-            display: inline-block;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 12px 30px;
-            border-radius: 25px;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            border: none;
-            cursor: pointer;
-            font-size: 1rem;
-        }
-
-        .demo-card .btn:hover {
-            transform: scale(1.05);
-            box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
-        }
-
-        .form-section {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            padding: 60px 40px;
-            border-radius: 20px;
-            color: white;
-            margin-top: 40px;
-        }
-
-        .form-section h2 {
-            color: white;
-            text-align: center;
-            margin-bottom: 30px;
-        }
-
-        .form-section h2::after {
-            background: white;
-            left: 50%;
-            transform: translateX(-50%);
-        }
-
-        form {
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .form-group {
-            margin-bottom: 25px;
-        }
-
-        label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: 500;
-        }
-
-        input, select, textarea {
-            width: 100%;
-            padding: 15px;
-            border: 2px solid rgba(255, 255, 255, 0.3);
-            border-radius: 10px;
-            font-size: 1rem;
-            background: rgba(255, 255, 255, 0.1);
-            color: white;
-            transition: all 0.3s ease;
-        }
-
-        input::placeholder, textarea::placeholder {
-            color: rgba(255, 255, 255, 0.6);
-        }
-
-        input:focus, select:focus, textarea:focus {
-            outline: none;
-            background: rgba(255, 255, 255, 0.2);
-            border-color: white;
-        }
-
-        select option {
-            background: #667eea;
-            color: white;
-        }
-
-        .submit-btn {
-            width: 100%;
-            padding: 18px;
-            background: white;
-            color: #667eea;
-            border: none;
-            border-radius: 10px;
-            font-size: 1.1rem;
-            font-weight: bold;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .submit-btn:hover {
-            transform: scale(1.02);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-        }
-
-        .workflow-visual {
-            background: #f8f9fa;
-            padding: 40px;
-            border-radius: 15px;
-            margin-top: 30px;
-        }
-
-        .workflow-steps {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 20px;
-        }
-
-        .workflow-step {
-            flex: 1;
-            min-width: 150px;
-            text-align: center;
-            position: relative;
-        }
-
-        .step-icon {
-            width: 80px;
-            height: 80px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 15px;
-            font-size: 2rem;
-            color: white;
-            opacity: 0.3;
-            transition: all 0.5s ease;
-        }
-
-        .workflow-step.active .step-icon {
-            opacity: 1;
-            animation: pulse 1s ease;
-        }
-
-        .workflow-step::after {
-            content: '→';
-            position: absolute;
-            right: -30px;
-            top: 35px;
-            font-size: 2rem;
-            color: #667eea;
-            opacity: 0.3;
-        }
-
-        .workflow-step:last-child::after {
-            display: none;
-        }
-
-        .step-label {
-            font-size: 0.9rem;
-            color: #666;
-            font-weight: 500;
-        }
-
-        .status-message {
-            background: rgba(102, 126, 234, 0.1);
-            padding: 20px;
-            border-radius: 10px;
-            margin-top: 20px;
-            display: none;
-            border-left: 4px solid #667eea;
-        }
-
-        .status-message.show {
-            display: block;
-            animation: slideIn 0.5s ease;
-        }
-
-        .platforms {
-            display: flex;
-            gap: 20px;
-            flex-wrap: wrap;
-            margin-top: 30px;
-            justify-content: center;
-        }
-
-        .platform-badge {
-            background: white;
-            padding: 15px 25px;
-            border-radius: 25px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            font-weight: 500;
-            color: #667eea;
-            transition: all 0.3s ease;
-        }
-
-        .platform-badge:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
-        }
-
-        footer {
-            text-align: center;
-            padding: 40px 20px;
-            color: white;
-        }
-
-        footer a {
-            color: white;
-            text-decoration: none;
-            margin: 0 15px;
-            transition: opacity 0.3s ease;
-        }
-
-        footer a:hover {
-            opacity: 0.8;
-        }
-
-        @keyframes fadeInDown {
-            from {
-                opacity: 0;
-                transform: translateY(-30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes pulse {
-            0%, 100% {
-                transform: scale(1);
-            }
-            50% {
-                transform: scale(1.1);
-            }
-        }
-
-        @keyframes slideIn {
-            from {
-                opacity: 0;
-                transform: translateX(-20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-
-        @media (max-width: 768px) {
-            header h1 {
-                font-size: 2rem;
-            }
-
-            header p {
-                font-size: 1rem;
-            }
-
-            .main-content {
-                padding: 40px 20px;
-            }
-
-            .workflow-steps {
-                flex-direction: column;
-            }
-
-            .workflow-step::after {
-                content: '↓';
-                right: auto;
-                top: auto;
-                bottom: -35px;
-                left: 50%;
-                transform: translateX(-50%);
-            }
-
-            .stats {
-                gap: 20px;
-            }
-
-            .stat-box {
-                padding: 15px 25px;
-            }
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Automation Portfolio - n8n Specialist</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=Space+Grotesk:wght@700;900&display=swap" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <div class="container">
-            <h1>Experience Automation in Action</h1>
-            <p>See real workflows trigger across multiple platforms — not just slides</p>
-            
-            <div class="stats">
-                <div class="stat-box">
-                    <div class="stat-number" id="automation-count">0</div>
-                    <div class="stat-label">Automations Triggered</div>
-                </div>
-                <div class="stat-box">
-                    <div class="stat-number">5+</div>
-                    <div class="stat-label">Platforms Integrated</div>
-                </div>
-                <div class="stat-box">
-                    <div class="stat-number">&lt;2s</div>
-                    <div class="stat-label">Average Response Time</div>
-                </div>
-            </div>
-        </div>
-    </header>
-
-    <div class="container">
-        <div class="main-content">
-            <section class="section">
-                <h2>What I Build</h2>
-                <p>I create intelligent automation systems that connect platforms, streamline workflows, and eliminate manual tasks. Every demo on this page uses real integrations you can test right now.</p>
-                
-                <div class="platforms">
-                    <span class="platform-badge">GoHighLevel</span>
-                    <span class="platform-badge">ActiveCampaign</span>
-                    <span class="platform-badge">Make.com</span>
-                    <span class="platform-badge">Twilio</span>
-                    <span class="platform-badge">Airtable</span>
-                    <span class="platform-badge">HubSpot</span>
-                </div>
-            </section>
-
-            <section class="section">
-                <h2>Interactive Demos</h2>
-                
-                <div class="demo-grid">
-                    <div class="demo-card">
-                        <h3>🎯 Smart Lead Capture</h3>
-                        <p>Form with conditional logic that routes leads to different workflows based on their industry and needs.</p>
-                        <a href="#demo-form" class="btn">Try It Now</a>
-                    </div>
-
-                    <div class="demo-card">
-                        <h3>📧 Multi-Channel Engagement</h3>
-                        <p>See how one submission triggers personalized emails, SMS notifications, and CRM updates in real-time.</p>
-                        <a href="#demo-form" class="btn">Test Automation</a>
-                    </div>
-
-                    <div class="demo-card">
-                        <h3>⚡ Workflow Visualization</h3>
-                        <p>Watch the automation flow in action with live status updates showing each step as it completes.</p>
-                        <a href="#demo-form" class="btn">See It Live</a>
-                    </div>
-                </div>
-            </section>
-
-            <section class="section">
-                <h2>How It Works</h2>
-                <div class="workflow-visual">
-                    <div class="workflow-steps">
-                        <div class="workflow-step" id="step1">
-                            <div class="step-icon">📝</div>
-                            <div class="step-label">Form Submit</div>
-                        </div>
-                        <div class="workflow-step" id="step2">
-                            <div class="step-icon">🔄</div>
-                            <div class="step-label">Process Data</div>
-                        </div>
-                        <div class="workflow-step" id="step3">
-                            <div class="step-icon">📊</div>
-                            <div class="step-label">Update CRM</div>
-                        </div>
-                        <div class="workflow-step" id="step4">
-                            <div class="step-icon">📧</div>
-                            <div class="step-label">Send Email</div>
-                        </div>
-                        <div class="workflow-step" id="step5">
-                            <div class="step-icon">✅</div>
-                            <div class="step-label">Complete</div>
-                        </div>
-                    </div>
-                    
-                    <div class="status-message" id="status-message">
-                        <strong>✓ Automation Complete!</strong>
-                        <p id="status-text">Your information has been processed across all platforms.</p>
-                    </div>
-                </div>
-            </section>
-        </div>
-
-        <div class="form-section" id="demo-form">
-            <h2>Test Drive the Automation</h2>
-            <form id="automation-form">
-                <div class="form-group">
-                    <label for="name">Full Name *</label>
-                    <input type="text" id="name" name="name" required placeholder="John Doe">
-                </div>
-
-                <div class="form-group">
-                    <label for="email">Email Address *</label>
-                    <input type="email" id="email" name="email" required placeholder="john@example.com">
-                </div>
-
-                <div class="form-group">
-                    <label for="industry">Your Industry *</label>
-                    <select id="industry" name="industry" required>
-                        <option value="">Select your industry</option>
-                        <option value="real-estate">Real Estate</option>
-                        <option value="ecommerce">E-commerce</option>
-                        <option value="saas">SaaS / Technology</option>
-                        <option value="coaching">Coaching / Consulting</option>
-                        <option value="agency">Marketing Agency</option>
-                        <option value="other">Other</option>
-                    </select>
-                </div>
-
-                <div class="form-group">
-                    <label for="interest">What interests you most?</label>
-                    <select id="interest" name="interest">
-                        <option value="lead-generation">Lead Generation Automation</option>
-                        <option value="email-campaigns">Email Campaign Management</option>
-                        <option value="crm-integration">CRM Integration</option>
-                        <option value="workflow-optimization">Workflow Optimization</option>
-                        <option value="all">All of the above</option>
-                    </select>
-                </div>
-
-                <div class="form-group">
-                    <label for="message">Additional Notes (Optional)</label>
-                    <textarea id="message" name="message" rows="4" placeholder="Tell me about your automation needs..."></textarea>
-                </div>
-
-                <button type="submit" class="submit-btn">🚀 Trigger Automation</button>
-            </form>
-        </div>
-
-        <div class="main-content" style="margin-top: 40px;">
-            <section class="section">
-                <h2>What Happens Next?</h2>
-                <p style="font-size: 1.1rem; line-height: 1.8;">When you submit the form above, here's what happens in under 2 seconds:</p>
-                <ul style="margin-top: 20px; margin-left: 20px; line-height: 2;">
-                    <li>✓ Your data is captured and validated</li>
-                    <li>✓ Contact record created in the database</li>
-                    <li>✓ Personalized welcome email sent to your inbox</li>
-                    <li>✓ Tagged and segmented based on your industry</li>
-                    <li>✓ Follow-up sequence initiated automatically</li>
-                    <li>✓ Notification sent to my dashboard</li>
-                </ul>
-                <p style="margin-top: 30px; padding: 20px; background: #f8f9fa; border-radius: 10px; border-left: 4px solid #667eea;">
-                    <strong>Note:</strong> This is a live demonstration. While you'll receive a real confirmation, some features are simulated for portfolio purposes. In client projects, every step connects to production systems.
-                </p>
-            </section>
-
-            <section class="section">
-                <h2>Ready to Automate Your Business?</h2>
-                <p style="font-size: 1.1rem; margin-bottom: 30px;">Let's discuss how I can build custom automation solutions for your specific needs.</p>
-                <div style="text-align: center;">
-                    <a href="mailto:jastertongol@yahoo.com" class="demo-card btn" style="display: inline-block; text-decoration: none;">📧 Get In Touch</a>
-                    <a href="https://linkedin.com/in/jaster-tongol" target="_blank" class="demo-card btn" style="display: inline-block; text-decoration: none; margin-left: 20px;">💼 View LinkedIn</a>
-                </div>
-            </section>
-        </div>
-    </div>
-
-    <footer>
-        <div class="container">
-            <p>&copy; 2024 Jaster Tongol | Chief Automations Officer</p>
-            <p>
-                <a href="mailto:jastertongol@yahoo.com">Email</a>
-                <a href="https://linkedin.com/in/jaster-tongol" target="_blank">LinkedIn</a>
-                <a href="tel:+1234567890">Schedule Call</a>
-            </p>
-        </div>
-    </footer>
-
-    <script>
-        // Automation counter animation
-        let count = 0;
-        const targetCount = 247;
-        const counterElement = document.getElementById('automation-count');
-        
-        function animateCounter() {
-            const increment = targetCount / 100;
-            const timer = setInterval(() => {
-                count += increment;
-                if (count >= targetCount) {
-                    count = targetCount;
-                    clearInterval(timer);
-                }
-                counterElement.textContent = Math.floor(count);
-            }, 20);
-        }
-        
-        animateCounter();
-
-        // Form submission handler
-        document.getElementById('automation-form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Get form data
-            const formData = {
-                name: document.getElementById('name').value,
-                email: document.getElementById('email').value,
-                industry: document.getElementById('industry').value,
-                interest: document.getElementById('interest').value,
-                message: document.getElementById('message').value
-            };
-
-            // Disable submit button
-            const submitBtn = document.querySelector('.submit-btn');
-            submitBtn.disabled = true;
-            submitBtn.textContent = '⚙️ Processing...';
-
-            // Animate workflow steps
-            animateWorkflow(formData);
-        });
-
-        function animateWorkflow(formData) {
-            const steps = ['step1', 'step2', 'step3', 'step4', 'step5'];
-            const statusMessage = document.getElementById('status-message');
-            const statusText = document.getElementById('status-text');
-            
-            let currentStep = 0;
-            
-            // Scroll to workflow
-            document.querySelector('.workflow-visual').scrollIntoView({ behavior: 'smooth', block: 'center' });
-            
-            const interval = setInterval(() => {
-                if (currentStep < steps.length) {
-                    document.getElementById(steps[currentStep]).classList.add('active');
-                    currentStep++;
-                } else {
-                    clearInterval(interval);
-                    
-                    // Show completion message
-                    statusMessage.classList.add('show');
-                    statusText.innerHTML = `
-                        <strong>Welcome ${formData.name}!</strong><br>
-                        Check your inbox at <strong>${formData.email}</strong> for a personalized message.<br>
-                        You've been tagged for <strong>${formData.industry}</strong> follow-ups.
-                    `;
-                    
-                    // Reset form
-                    document.getElementById('automation-form').reset();
-                    const submitBtn = document.querySelector('.submit-btn');
-                    submitBtn.disabled = false;
-                    submitBtn.textContent = '🚀 Trigger Automation';
-                    
-                    // Update counter
-                    const counter = document.getElementById('automation-count');
-                    counter.textContent = parseInt(counter.textContent) + 1;
-                    
-                    // Here you would add your actual Make.com webhook or API call
-                    // Example:
-                    // fetch('YOUR_MAKE_COM_WEBHOOK_URL', {
-                    //     method: 'POST',
-                    //     headers: { 'Content-Type': 'application/json' },
-                    //     body: JSON.stringify(formData)
-                    // });
-                }
-            }, 600);
-        }
-
-        // Smooth scroll for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }
-            });
-        });
-    </script>
+<div class="scroll-progress"></div>
+<div class="bg-grid"></div>
+<div class="mesh-gradient"></div>
+<div class="geometric-shape shape1"></div>
+<div class="geometric-shape shape2"></div>
+<div class="geometric-shape shape3"></div>
+<div class="mobile-overlay" id="mo"></div>
+<div class="mobile-nav" id="mn">
+<button class="close-menu" id="cm" aria-label="Close mobile menu">×</button>
+<ul class="mobile-nav-links">
+<li><a href="#home" class="mobile-link">Home</a></li>
+<li><a href="#about" class="mobile-link">About</a></li>
+<li><a href="#services" class="mobile-link">Services</a></li>
+<li><a href="#portfolio" class="mobile-link">Portfolio</a></li>
+<li><a href="#faq" class="mobile-link">FAQ</a></li>
+<li><a href="#contact" class="mobile-link">Contact</a></li>
+</ul>
+</div>
+<header id="hdr">
+<div class="container">
+<nav>
+<div class="logo"><span>JASTER</span><span>TONGOL</span></div>
+<ul class="nav-links">
+<li><a href="#home" class="active">Home</a></li>
+<li><a href="#about">About</a></li>
+<li><a href="#services">Services</a></li>
+<li><a href="#portfolio">Portfolio</a></li>
+<li><a href="#faq">FAQ</a></li>
+<li><a href="#contact" class="contact-btn"><span>Contact</span></a></li>
+</ul>
+<button class="menu-button" id="mb" aria-label="Open mobile menu" aria-expanded="false">☰</button>
+</nav>
+</div>
+</header>
+<section class="hero" id="home">
+<div class="container">
+<div class="hero-content">
+<h1>Hi, I'm Jaster Tongol</h1>
+<h2>Automation & n8n Specialist</h2>
+<p>I transform business processes through intelligent automation. With expertise in n8n, Zapier, and custom workflow development, I help companies save time, reduce errors, and scale efficiently.</p>
+<div class="hero-buttons">
+<a href="#portfolio" class="btn-primary"><span>View My Work</span></a>
+<a href="#contact" class="btn-secondary"><span>Let's Talk</span></a>
+</div>
+</div>
+<div class="hero-visual">
+<div class="code-window">
+<div class="window-dots">
+<div class="dot"></div>
+<div class="dot"></div>
+<div class="dot"></div>
+</div>
+<div class="code-content">
+<div class="code-line"><span class="code-keyword">const</span> <span class="code-function">automateWorkflow</span> = () => {</div>
+<div class="code-line">  <span class="code-keyword">return</span> {</div>
+<div class="code-line">    efficiency: <span class="code-string">'100%'</span>,</div>
+<div class="code-line">    errors: <span class="code-string">'0'</span>,</div>
+<div class="code-line">    timeSaved: <span class="code-string">'hours daily'</span></div>
+<div class="code-line">  };</div>
+<div class="code-line">};</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="about" id="about">
+<div class="container">
+<span class="section-tag">About Me</span>
+<h2 class="section-title">Transforming Businesses Through Automation</h2>
+<p>With over 4 years of experience in digital marketing and automation, I specialize in building production-grade workflows that eliminate manual tasks and drive business growth.</p>
+<p>My expertise spans n8n, Zapier, Make, and custom API integrations. I focus on creating robust, error-resistant automation solutions that handle real-world complexity while maintaining simplicity.</p>
+<p>From e-commerce order routing to marketing automation and data synchronization, I deliver solutions that just work—allowing you to focus on what matters most: growing your business.</p>
+<div class="about-stats">
+<div class="stat-card">
+<div class="stat-number">4+</div>
+<div class="stat-label">Years Experience</div>
+</div>
+<div class="stat-card">
+<div class="stat-number">50+</div>
+<div class="stat-label">Projects Completed</div>
+</div>
+<div class="stat-card">
+<div class="stat-number">30+</div>
+<div class="stat-label">Happy Clients</div>
+</div>
+</div>
+</div>
+</section>
+<section class="services" id="services">
+<div class="container">
+<span class="section-tag">What I Offer</span>
+<h2 class="section-title">Services</h2>
+<div class="services-grid">
+<div class="service-card">
+<div class="service-icon"><i class="fas fa-cogs"></i></div>
+<h4>Workflow Automation</h4>
+<p>Custom n8n workflow development, Zapier/Make automation setup, API integrations between tools, and process automation consulting to streamline your operations.</p>
+</div>
+<div class="service-card">
+<div class="service-icon"><i class="fas fa-chart-line"></i></div>
+<h4>Business Process Optimization</h4>
+<p>Comprehensive workflow audits, identifying automation opportunities, streamlining repetitive tasks, and providing efficiency consulting to maximize productivity.</p>
+</div>
+<div class="service-card">
+<div class="service-icon"><i class="fas fa-envelope-open-text"></i></div>
+<h4>Marketing Automation</h4>
+<p>Email marketing automation, social media scheduling workflows, lead generation automation, and CRM integrations to supercharge your marketing efforts.</p>
+</div>
+<div class="service-card">
+<div class="service-icon"><i class="fas fa-link"></i></div>
+<h4>Data Integration & Management</h4>
+<p>Connecting multiple platforms, automated reporting dashboards, data synchronization between tools, and database automation for seamless operations.</p>
+</div>
+<div class="service-card">
+<div class="service-icon"><i class="fas fa-tools"></i></div>
+<h4>Custom Solutions</h4>
+<p>Bespoke automation projects, one-time workflow setup, ongoing automation support and maintenance, plus comprehensive training and documentation.</p>
+</div>
+<div class="service-card">
+<div class="service-icon"><i class="fas fa-lightbulb"></i></div>
+<h4>Consultation & Strategy</h4>
+<p>Automation roadmap planning, tool selection guidance, and digital marketing strategy to help you make informed decisions about your automation journey.</p>
+</div>
+</div>
+</div>
+</section>
+<section class="portfolio" id="portfolio">
+<div class="container">
+<span class="section-tag">My Work</span>
+<h2 class="section-title">Portfolio</h2>
+<div class="case-study">
+<h4>Multi-Supplier Shopify Order Routing System</h4>
+<p class="subtitle">Production-Grade n8n Workflow for Print-on-Demand E-Commerce</p>
+<div class="case-details">
+<div>
+<strong>The Challenge</strong>
+<p>A fast-growing POD store using three suppliers (Printful, Gooten, Printify) faced a 4-6 hour daily manual process of sorting, reformatting, and routing orders from a single Shopify export. This led to errors, delayed shipments, and customer complaints during peak sales.</p>
+</div>
+<div>
+<strong>The Solution</strong>
+<p>Built a fully autonomous n8n workflow with production-grade error handling, retry logic, real-time validation, centralized logging, and instant Slack alerts. The system processes exports automatically with zero human intervention under normal conditions.</p>
+</div>
+</div>
+<div class="workflow-images">
+<div class="workflow-img" role="button" tabindex="0" aria-label="View workflow diagram">
+<svg viewBox="0 0 800 500" style="width:100%;height:100%">
+<defs>
+<linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="0%">
+<stop offset="0%" style="stop-color:#3AAFA9;stop-opacity:1" />
+<stop offset="100%" style="stop-color:#6C63FF;stop-opacity:1" />
+</linearGradient>
+</defs>
+<!-- Shopify Input -->
+<rect x="50" y="200" width="120" height="80" rx="10" fill="rgba(58,175,169,0.2)" stroke="#3AAFA9" stroke-width="2"/>
+<text x="110" y="235" text-anchor="middle" fill="#3AAFA9" font-size="14" font-weight="600">Shopify</text>
+<text x="110" y="255" text-anchor="middle" fill="#DEF2F1" font-size="12">Order Export</text>
+<!-- Arrow 1 -->
+<line x1="170" y1="240" x2="230" y2="240" stroke="#3AAFA9" stroke-width="2" marker-end="url(#arrowhead)"/>
+<!-- n8n Processing -->
+<rect x="230" y="200" width="120" height="80" rx="10" fill="rgba(108,99,255,0.2)" stroke="#6C63FF" stroke-width="2"/>
+<text x="290" y="235" text-anchor="middle" fill="#6C63FF" font-size="14" font-weight="600">n8n Router</text>
+<text x="290" y="255" text-anchor="middle" fill="#DEF2F1" font-size="12">Parse & Filter</text>
+<!-- Arrow to Printful -->
+<line x1="350" y1="220" x2="430" y2="120" stroke="#3AAFA9" stroke-width="2" marker-end="url(#arrowhead)"/>
+<!-- Arrow to Gooten -->
+<line x1="350" y1="240" x2="430" y2="240" stroke="#3AAFA9" stroke-width="2" marker-end="url(#arrowhead)"/>
+<!-- Arrow to Printify -->
+<line x1="350" y1="260" x2="430" y2="360" stroke="#3AAFA9" stroke-width="2" marker-end="url(#arrowhead)"/>
+<!-- Printful -->
+<rect x="430" y="80" width="120" height="80" rx="10" fill="rgba(58,175,169,0.2)" stroke="#3AAFA9" stroke-width="2"/>
+<text x="490" y="115" text-anchor="middle" fill="#3AAFA9" font-size="14" font-weight="600">Printful</text>
+<text x="490" y="135" text-anchor="middle" fill="#DEF2F1" font-size="12">Auto Submit</text>
+<!-- Gooten -->
+<rect x="430" y="200" width="120" height="80" rx="10" fill="rgba(58,175,169,0.2)" stroke="#3AAFA9" stroke-width="2"/>
+<text x="490" y="235" text-anchor="middle" fill="#3AAFA9" font-size="14" font-weight="600">Gooten</text>
+<text x="490" y="255" text-anchor="middle" fill="#DEF2F1" font-size="12">Auto Submit</text>
+<!-- Printify -->
+<rect x="430" y="320" width="120" height="80" rx="10" fill="rgba(58,175,169,0.2)" stroke="#3AAFA9" stroke-width="2"/>
+<text x="490" y="355" text-anchor="middle" fill="#3AAFA9" font-size="14" font-weight="600">Printify</text>
+<text x="490" y="375" text-anchor="middle" fill="#DEF2F1" font-size="12">Auto Submit</text>
+<!-- Arrow to Slack -->
+<line x1="550" y1="240" x2="610" y2="240" stroke="#3AAFA9" stroke-width="2" marker-end="url(#arrowhead)"/>
+<!-- Slack Notification -->
+<rect x="610" y="200" width="120" height="80" rx="10" fill="rgba(108,99,255,0.2)" stroke="#6C63FF" stroke-width="2"/>
+<text x="670" y="235" text-anchor="middle" fill="#6C63FF" font-size="14" font-weight="600">Slack</text>
+<text x="670" y="255" text-anchor="middle" fill="#DEF2F1" font-size="12">Alert Sent</text>
+<!-- Arrow marker definition -->
+<defs>
+<marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+<polygon points="0 0, 10 3, 0 6" fill="#3AAFA9" />
+</marker>
+</defs>
+<!-- Title -->
+<text x="400" y="40" text-anchor="middle" fill="#3AAFA9" font-size="18" font-weight="700">Core Workflow Logic</text>
+</svg>
+</div>
+<div class="workflow-img" role="button" tabindex="0" aria-label="View production implementation">
+<svg viewBox="0 0 800 500" style="width:100%;height:100%">
+<defs>
+<linearGradient id="grad2" x1="0%" y1="0%" x2="100%" y2="0%">
+<stop offset="0%" style="stop-color:#3AAFA9;stop-opacity:1" />
+<stop offset="100%" style="stop-color:#6C63FF;stop-opacity:1" />
+</linearGradient>
+</defs>
+<!-- Trigger -->
+<rect x="50" y="60" width="140" height="70" rx="10" fill="rgba(58,175,169,0.2)" stroke="#3AAFA9" stroke-width="2"/>
+<text x="120" y="90" text-anchor="middle" fill="#3AAFA9" font-size="14" font-weight="600">File Trigger</text>
+<text x="120" y="110" text-anchor="middle" fill="#DEF2F1" font-size="11">Monitor Uploads</text>
+<!-- Arrow -->
+<line x1="120" y1="130" x2="120" y2="170" stroke="#3AAFA9" stroke-width="2" marker-end="url(#arrow2)"/>
+<!-- Validation -->
+<rect x="50" y="170" width="140" height="70" rx="10" fill="rgba(108,99,255,0.2)" stroke="#6C63FF" stroke-width="2"/>
+<text x="120" y="200" text-anchor="middle" fill="#6C63FF" font-size="14" font-weight="600">Validate Data</text>
+<text x="120" y="220" text-anchor="middle" fill="#DEF2F1" font-size="11">Check Format</text>
+<!-- Arrow -->
+<line x1="120" y1="240" x2="120" y2="280" stroke="#3AAFA9" stroke-width="2" marker-end="url(#arrow2)"/>
+<!-- Error Handler -->
+<rect x="230" y="170" width="140" height="70" rx="10" fill="rgba(255,95,86,0.2)" stroke="#ff5f56" stroke-width="2"/>
+<text x="300" y="200" text-anchor="middle" fill="#ff5f56" font-size="14" font-weight="600">Error Handler</text>
+<text x="300" y="220" text-anchor="middle" fill="#DEF2F1" font-size="11">Retry Logic</text>
+<!-- Error arrow -->
+<line x1="190" y1="205" x2="230" y2="205" stroke="#ff5f56" stroke-width="2" stroke-dasharray="5,5" marker-end="url(#arrow3)"/>
+<!-- Route -->
+<rect x="50" y="280" width="140" height="70" rx="10" fill="rgba(58,175,169,0.2)" stroke="#3AAFA9" stroke-width="2"/>
+<text x="120" y="310" text-anchor="middle" fill="#3AAFA9" font-size="14" font-weight="600">Route Orders</text>
+<text x="120" y="330" text-anchor="middle" fill="#DEF2F1" font-size="11">By Supplier</text>
+<!-- Arrows to suppliers -->
+<line x1="190" y1="295" x2="410" y2="95" stroke="#3AAFA9" stroke-width="2" marker-end="url(#arrow2)"/>
+<line x1="190" y1="315" x2="410" y2="205" stroke="#3AAFA9" stroke-width="2" marker-end="url(#arrow2)"/>
+<line x1="190" y1="335" x2="410" y2="315" stroke="#3AAFA9" stroke-width="2" marker-end="url(#arrow2)"/>
+<!-- Suppliers -->
+<rect x="410" y="60" width="140" height="70" rx="10" fill="rgba(58,175,169,0.2)" stroke="#3AAFA9" stroke-width="2"/>
+<text x="480" y="90" text-anchor="middle" fill="#3AAFA9" font-size="14" font-weight="600">Printful API</text>
+<text x="480" y="110" text-anchor="middle" fill="#DEF2F1" font-size="11">Submit Orders</text>
+<rect x="410" y="170" width="140" height="70" rx="10" fill="rgba(58,175,169,0.2)" stroke="#3AAFA9" stroke-width="2"/>
+<text x="480" y="200" text-anchor="middle" fill="#3AAFA9" font-size="14" font-weight="600">Gooten API</text>
+<text x="480" y="220" text-anchor="middle" fill="#DEF2F1" font-size="11">Submit Orders</text>
+<rect x="410" y="280" width="140" height="70" rx="10" fill="rgba(58,175,169,0.2)" stroke="#3AAFA9" stroke-width="2"/>
+<text x="480" y="310" text-anchor="middle" fill="#3AAFA9" font-size="14" font-weight="600">Printify API</text>
+<text x="480" y="330" text-anchor="middle" fill="#DEF2F1" font-size="11">Submit Orders</text>
+<!-- Logging -->
+<rect x="610" y="170" width="140" height="70" rx="10" fill="rgba(108,99,255,0.2)" stroke="#6C63FF" stroke-width="2"/>
+<text x="680" y="200" text-anchor="middle" fill="#6C63FF" font-size="14" font-weight="600">Log Results</text>
+<text x="680" y="220" text-anchor="middle" fill="#DEF2F1" font-size="11">Track Success</text>
+<!-- Arrows to logging -->
+<line x1="550" y1="95" x2="610" y2="180" stroke="#3AAFA9" stroke-width="2" marker-end="url(#arrow2)"/>
+<line x1="550" y1="205" x2="610" y2="205" stroke="#3AAFA9" stroke-width="2" marker-end="url(#arrow2)"/>
+<line x1="550" y1="315" x2="610" y2="230" stroke="#3AAFA9" stroke-width="2" marker-end="url(#arrow2)"/>
+<!-- Notification -->
+<rect x="610" y="280" width="140" height="70" rx="10" fill="rgba(108,99,255,0.2)" stroke="#6C63FF" stroke-width="2"/>
+<text x="680" y="310" text-anchor="middle" fill="#6C63FF" font-size="14" font-weight="600">Slack Alert</text>
+<text x="680" y="330" text-anchor="middle" fill="#DEF2F1" font-size="11">Team Notified</text>
+<!-- Arrow to notification -->
+<line x1="680" y1="240" x2="680" y2="280" stroke="#3AAFA9" stroke-width="2" marker-end="url(#arrow2)"/>
+<!-- Arrow markers -->
+<defs>
+<marker id="arrow2" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+<polygon points="0 0, 10 3, 0 6" fill="#3AAFA9" />
+</marker>
+<marker id="arrow3" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+<polygon points="0 0, 10 3, 0 6" fill="#ff5f56" />
+</marker>
+</defs>
+<!-- Title -->
+<text x="400" y="30" text-anchor="middle" fill="#3AAFA9" font-size="18" font-weight="700">Production Implementation</text>
+<!-- Labels -->
+<text x="400" y="460" text-anchor="middle" fill="#B8C5D6" font-size="12">Includes error handling, retry logic, logging & notifications</text>
+</svg>
+</div>
+</div>
+<div class="results">
+<div class="result-item">
+<div class="result-number">4-6 hrs → 0</div>
+<div class="result-label">Daily processing time eliminated</div>
+</div>
+<div class="result-item">
+<div class="result-number">100%</div>
+<div class="result-label">Routing accuracy achieved</div>
+</div>
+<div class="result-item">
+<div class="result-number">0</div>
+<div class="result-label">Missed orders during peak traffic</div>
+</div>
+</div>
+</div>
+<div class="universal-workflows">
+<div class="universal-card">
+<h5><i class="fas fa-calendar-alt"></i> Social Media Content Scheduler</h5>
+<p>Automated multi-platform posting system that reads from Google Sheets and publishes to Instagram, Twitter, LinkedIn, and Facebook on schedule. Includes image optimization, hashtag management, and posting confirmation logs.</p>
+<div class="tools">
+<span class="tool-tag">n8n</span>
+<span class="tool-tag">Google Sheets</span>
+<span class="tool-tag">Instagram API</span>
+<span class="tool-tag">Twitter API</span>
+<span class="tool-tag">Buffer</span>
+</div>
+</div>
+<div class="universal-card">
+<h5><i class="fas fa-search-dollar"></i> Competitor Price Monitoring System</h5>
+<p>Daily web scraper that tracks competitor pricing across multiple websites, stores historical data in Airtable, calculates price changes, and sends alerts when competitors adjust their pricing strategy.</p>
+<div class="tools">
+<span class="tool-tag">n8n</span>
+<span class="tool-tag">Puppeteer</span>
+<span class="tool-tag">Airtable</span>
+<span class="tool-tag">Slack</span>
+<span class="tool-tag">Gmail</span>
+</div>
+</div>
+</div>
+<div class="more-projects">
+<div class="project-card">
+<h6>Lead Qualification Bot</h6>
+<p>Automated lead scoring system that enriches contact data, qualifies prospects based on custom criteria, and routes hot leads to sales team via CRM integration.</p>
+</div>
+<div class="project-card">
+<h6>Invoice Processing Automation</h6>
+<p>Extract data from incoming invoices, validate against purchase orders, sync with accounting software, and flag discrepancies for review.</p>
+</div>
+<div class="project-card">
+<h6>Customer Onboarding Workflow</h6>
+<p>Triggered email sequences, account provisioning, training material delivery, and progress tracking for new customer onboarding.</p>
+</div>
+<div class="project-card">
+<h6>E-commerce Inventory Sync</h6>
+<p>Real-time inventory synchronization across Shopify, WooCommerce, and Amazon stores with low-stock alerts and reorder automation.</p>
+</div>
+<div class="project-card">
+<h6>Meeting Notes Distributor</h6>
+<p>Automatically transcribe Zoom recordings, generate summaries using AI, extract action items, and distribute to participants via email and Notion.</p>
+</div>
+<div class="project-card">
+<h6>Review Request Automator</h6>
+<p>Triggered customer review requests sent via SMS and email after successful order delivery, with follow-up sequences for non-responders.</p>
+</div>
+</div>
+</div>
+</section>
+<section class="testimonials" id="testimonials">
+<div class="container">
+<span class="section-tag">Client Feedback</span>
+<h2 class="section-title">What People Say</h2>
+<div class="testimonials-grid">
+<div class="testimonial-card">
+<div class="testimonial-stars">
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+</div>
+<p class="testimonial-text">Jaster automated our entire order processing system and it's been a game changer. We went from spending hours every day on manual data entry to having everything done automatically. The system hasn't failed once in 3 months!</p>
+<div class="testimonial-author">
+<div class="author-avatar">M</div>
+<div class="author-info">
+<h5>Mike Torres</h5>
+<p>Owner, Small Print Shop</p>
+</div>
+</div>
+</div>
+<div class="testimonial-card">
+<div class="testimonial-stars">
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+</div>
+<p class="testimonial-text">I hired Jaster to help me automate my social media posting and it's saved me at least 10 hours a week. He was patient with all my questions and made sure I understood how everything worked. Highly recommend!</p>
+<div class="testimonial-author">
+<div class="author-avatar">S</div>
+<div class="author-info">
+<h5>Sarah Chen</h5>
+<p>Freelance Content Creator</p>
+</div>
+</div>
+</div>
+<div class="testimonial-card">
+<div class="testimonial-stars">
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+</div>
+<p class="testimonial-text">Working with Jaster was great. He took our messy spreadsheet workflow and turned it into a clean automated system. Communication was excellent and he delivered exactly what we needed, on time and within budget.</p>
+<div class="testimonial-author">
+<div class="author-avatar">R</div>
+<div class="author-info">
+<h5>Rachel Gomez</h5>
+<p>Operations Manager, Local Retailer</p>
+</div>
+</div>
+</div>
+<div class="testimonial-card">
+<div class="testimonial-stars">
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+</div>
+<p class="testimonial-text">I'm not technical at all but Jaster made the whole process easy to understand. He built an automation that syncs our inventory across three platforms and it just works. Best investment I've made for my business this year.</p>
+<div class="testimonial-author">
+<div class="author-avatar">D</div>
+<div class="author-info">
+<h5>David Park</h5>
+<p>E-commerce Store Owner</p>
+</div>
+</div>
+</div>
+<div class="testimonial-card">
+<div class="testimonial-stars">
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+</div>
+<p class="testimonial-text">Jaster helped automate our lead qualification process and it's been incredible. We're now responding to hot leads within minutes instead of hours. The ROI paid for itself in the first month. Can't thank him enough!</p>
+<div class="testimonial-author">
+<div class="author-avatar">L</div>
+<div class="author-info">
+<h5>Lisa Martinez</h5>
+<p>Marketing Consultant</p>
+</div>
+</div>
+</div>
+<div class="testimonial-card">
+<div class="testimonial-stars">
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+</div>
+<p class="testimonial-text">Super responsive and knowledgeable. Jaster built us a custom invoice processing system that cut our admin time in half. He also provided great documentation so we can maintain it ourselves. Would definitely work with him again.</p>
+<div class="testimonial-author">
+<div class="author-avatar">J</div>
+<div class="author-info">
+<h5>James Wilson</h5>
+<p>Small Business Owner</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="early-adopter" id="early-adopter">
+<div class="container">
+<div class="early-adopter-content">
+<div class="early-adopter-badge"><i class="fas fa-bolt"></i> Limited Time Offer</div>
+<h3>Special Launch Pricing</h3>
+<p>I'm building my freelance portfolio and looking for my next 5 clients. Get professional automation at a special rate while I grow my client base.</p>
+<div class="benefits-grid">
+<div class="benefit-item">
+<i class="fas fa-percentage"></i>
+<h4>20% Discount</h4>
+<p>Special rate on your first project</p>
+</div>
+<div class="benefit-item">
+<i class="fas fa-headset"></i>
+<h4>Extended Support</h4>
+<p>60 days of free support (usual: 30 days)</p>
+</div>
+<div class="benefit-item">
+<i class="fas fa-file-alt"></i>
+<h4>Detailed Case Study</h4>
+<p>Professional showcase of your project</p>
+</div>
+<div class="benefit-item">
+<i class="fas fa-shield-alt"></i>
+<h4>Satisfaction Guarantee</h4>
+<p>Not happy? Get your money back</p>
+</div>
+</div>
+<p style="font-size:16px;color:#3AAFA9;margin-bottom:30px;"><strong>What I ask in return:</strong> An honest testimonial, permission to showcase the work (can be anonymized), and a LinkedIn recommendation.</p>
+<div class="early-adopter-cta">
+<a href="#contact" class="btn-primary"><span><i class="fas fa-rocket"></i> Claim Your Spot</span></a>
+<a href="#portfolio" class="btn-secondary"><span>See My Work First</span></a>
+</div>
+</div>
+</div>
+</section>
+<section class="faq" id="faq">
+<div class="container">
+<span class="section-tag">Common Questions</span>
+<h2 class="section-title">Frequently Asked Questions</h2>
+<div class="faq-container">
+<div class="faq-item">
+<button class="faq-question" aria-expanded="false">
+How much does automation typically cost?
+<i class="fas fa-chevron-down"></i>
+</button>
+<div class="faq-answer">
+<p>Projects typically range from <strong>$500 to $5,000+</strong> depending on complexity. A simple email automation might be $500-1,000, while a multi-platform integration with custom logic could be $3,000-5,000. I offer a free consultation where we'll discuss your needs and I'll give you an accurate quote with no obligation.</p>
+</div>
+</div>
+<div class="faq-item">
+<button class="faq-question" aria-expanded="false">
+How long does a typical project take?
+<i class="fas fa-chevron-down"></i>
+</button>
+<div class="faq-answer">
+<p>Most projects are completed in <strong>1-4 weeks</strong>. Simple workflows (like automated email sequences or data syncing) can be done in a few days. More complex integrations with multiple systems, custom error handling, and extensive testing may take 3-4 weeks. I'll give you a clear timeline upfront and keep you updated throughout.</p>
+</div>
+</div>
+<div class="faq-item">
+<button class="faq-question" aria-expanded="false">
+What tools and platforms do you work with?
+<i class="fas fa-chevron-down"></i>
+</button>
+<div class="faq-answer">
+<p>I specialize in <strong>n8n, Zapier, and Make.com</strong>. I can integrate with virtually any tool that has an API including: Shopify, WooCommerce, Google Sheets, Airtable, Gmail, Slack, HubSpot, Salesforce, QuickBooks, social media platforms, and hundreds more. If it has an API or webhook support, I can likely automate it.</p>
+</div>
+</div>
+<div class="faq-item">
+<button class="faq-question" aria-expanded="false">
+I'm not technical - is that a problem?
+<i class="fas fa-chevron-down"></i>
+</button>
+<div class="faq-answer">
+<p><strong>Not at all!</strong> I work with many non-technical clients. I'll explain everything in plain English, avoid jargon, and make sure you understand how your automation works. I also provide clear documentation and training so you can monitor and use your workflows with confidence. You don't need to know how to code - that's my job!</p>
+</div>
+</div>
+<div class="faq-item">
+<button class="faq-question" aria-expanded="false">
+What if something breaks after you're done?
+<i class="fas fa-chevron-down"></i>
+</button>
+<div class="faq-answer">
+<p>All projects include <strong>30 days of free support</strong> (60 days for early adopter clients). Most workflows run smoothly for months or years without issues. If something does break, I'm available to fix it quickly. I also offer ongoing maintenance packages starting at <strong>$200/month</strong> for clients who want peace of mind and priority support.</p>
+</div>
+</div>
+<div class="faq-item">
+<button class="faq-question" aria-expanded="false">
+Can you work with my industry/business type?
+<i class="fas fa-chevron-down"></i>
+</button>
+<div class="faq-answer">
+<p><strong>Yes!</strong> I've worked with e-commerce, marketing agencies, content creators, consultants, and various small businesses. Even if I haven't worked in your exact industry, automation principles are universal. I'm a quick learner and will take the time to understand your specific processes and needs before building anything.</p>
+</div>
+</div>
+<div class="faq-item">
+<button class="faq-question" aria-expanded="false">
+Do you offer guarantees or refunds?
+<i class="fas fa-chevron-down"></i>
+</button>
+<div class="faq-answer">
+<p>Yes! I offer a <strong>satisfaction guarantee</strong>. If the automation doesn't work as promised or you're not satisfied with the results, I'll either fix it until you're happy or refund your money. My goal is to build long-term relationships, not just one-off projects. Your success is my success.</p>
+</div>
+</div>
+<div class="faq-item">
+<button class="faq-question" aria-expanded="false">
+What do you need from me to get started?
+<i class="fas fa-chevron-down"></i>
+</button>
+<div class="faq-answer">
+<p>Just three things: <strong>(1)</strong> Access to the tools/platforms you want automated (API keys, login credentials, etc.), <strong>(2)</strong> A clear description of your current manual process and pain points, <strong>(3)</strong> Your goals and desired outcomes. From there, I'll handle all the technical work, testing, and documentation.</p>
+</div>
+</div>
+<div class="faq-item">
+<button class="faq-question" aria-expanded="false">
+Can I make changes to the automation later?
+<i class="fas fa-chevron-down"></i>
+</button>
+<div class="faq-answer">
+<p><strong>Absolutely!</strong> I build workflows that are well-documented and maintainable. You can request changes anytime - small tweaks during the support period are usually free. Larger changes or new features can be added as separate projects. I also provide documentation so you can make simple changes yourself if you want to.</p>
+</div>
+</div>
+<div class="faq-item">
+<button class="faq-question" aria-expanded="false">
+How do payments work?
+<i class="fas fa-chevron-down"></i>
+</button>
+<div class="faq-answer">
+<p>For projects under <strong>$2,000</strong>, I typically ask for 50% upfront and 50% upon completion. For larger projects, we can split it into milestones (e.g., 30% upfront, 40% at midpoint, 30% at completion). I accept bank transfers, PayPal, or Wise. Payment terms are always discussed and agreed upon before we start.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="contact" id="contact">
+<div class="container">
+<div class="contact-content">
+<div class="contact-info">
+<h3>Let's Work Together</h3>
+<p>Ready to transform your business with automation? Get in touch and let's discuss how we can streamline your workflows and boost your productivity.</p>
+<div class="contact-methods">
+<div class="contact-method">
+<div class="contact-icon"><i class="fas fa-envelope"></i></div>
+<div class="contact-method-text">
+<h4>Email</h4>
+<p>jastertongol@yahoo.com</p>
+</div>
+</div>
+<div class="contact-method">
+<div class="contact-icon"><i class="fab fa-linkedin"></i></div>
+<div class="contact-method-text">
+<h4>LinkedIn</h4>
+<p>linkedin.com/in/jaster-tongol</p>
+</div>
+</div>
+<div class="contact-method">
+<div class="contact-icon"><i class="fas fa-globe"></i></div>
+<div class="contact-method-text">
+<h4>Location</h4>
+<p>Available for remote projects worldwide</p>
+</div>
+</div>
+</div>
+</div>
+<div class="contact-form">
+<form id="cf">
+<div class="form-group">
+<label for="name">Name</label>
+<input type="text" id="name" name="name" placeholder="Your name" required aria-required="true">
+</div>
+<div class="form-group">
+<label for="email">Email</label>
+<input type="email" id="email" name="email" placeholder="your@email.com" required aria-required="true">
+</div>
+<div class="form-group">
+<label for="message">Message</label>
+<textarea id="message" name="message" placeholder="Tell me about your project..." required aria-required="true"></textarea>
+</div>
+<button type="submit" class="submit-btn"><span>Send Message</span></button>
+</form>
+</div>
+</div>
+</div>
+</section>
+<footer>
+<div class="container">
+<div class="footer-content">
+<div class="footer-brand">
+<h3>JASTER TONGOL</h3>
+<p>Transforming businesses through intelligent automation. Specializing in n8n workflows, API integrations, and custom automation solutions.</p>
+<div class="social-links">
+<a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+<a href="#" class="social-link"><i class="fab fa-github"></i></a>
+<a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+<a href="#" class="social-link"><i class="fas fa-envelope"></i></a>
+</div>
+</div>
+<div class="footer-section">
+<h4>Quick Links</h4>
+<ul class="footer-links">
+<li><a href="#home">Home</a></li>
+<li><a href="#about">About</a></li>
+<li><a href="#services">Services</a></li>
+<li><a href="#portfolio">Portfolio</a></li>
+</ul>
+</div>
+<div class="footer-section">
+<h4>Services</h4>
+<ul class="footer-links">
+<li><a href="#services">Workflow Automation</a></li>
+<li><a href="#services">Marketing Automation</a></li>
+<li><a href="#services">Data Integration</a></li>
+<li><a href="#services">Consulting</a></li>
+</ul>
+</div>
+<div class="footer-section">
+<h4>Contact</h4>
+<ul class="footer-links">
+<li><a href="#contact">Get in Touch</a></li>
+<li><a href="#">Book a Call</a></li>
+<li><a href="#">View Availability</a></li>
+<li><a href="#">FAQ</a></li>
+</ul>
+</div>
+</div>
+<div class="footer-bottom">
+<p>&copy; 2024 Jaster Tongol. All rights reserved. Built with passion for automation.</p>
+</div>
+</div>
+</footer>
+<div class="scroll-top" id="scrollTop" role="button" tabindex="0" aria-label="Scroll to top">↑</div>
 </body>
 </html>
